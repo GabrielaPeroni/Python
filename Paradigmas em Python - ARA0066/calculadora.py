@@ -1,7 +1,7 @@
 import math
 
 def soma(): #soma
-    num = float(input("\nQuantos numeros deseja somar ? "))
+    num = int(input("\nQuantos numeros deseja somar ? "))
     somas = []
 
     if num < 2:
@@ -10,10 +10,10 @@ def soma(): #soma
         for i in range(num):
             somas.append(float(input(f"{i+1} numero -> ")))
 
-        print(math.fsum(somas))
+        print("\nResultado da conta ", math.fsum(somas))
 
 def sub(): # Subtracao
-    num = float(input("\nQuantos numeros deseja subtrair ? "))
+    num = int(input("\nQuantos numeros deseja subtrair ? "))
 
     if num < 2:
         print("E necessário pelo menos dois numeros.")
@@ -23,10 +23,10 @@ def sub(): # Subtracao
             subtracao = float(input(f"{i+1} numero -> "))
             result -= subtracao
 
-        print(result)
+        print("\nResultado da conta ", result)
 
 def mult(): # Multiplicacao
-    num = float(input("\nQuantos numeros deseja multiplicar ? "))
+    num = int(input("\nQuantos numeros deseja multiplicar ? "))
     multiplicacao = []
 
     if num < 2:
@@ -35,10 +35,10 @@ def mult(): # Multiplicacao
         for i in range(num):
             multiplicacao.append(float(input(f"{i+1} numero -> ")))
 
-        print(math.prod(multiplicacao))
+        print("\nResultado da conta ", math.prod(multiplicacao))
 
 def div(): # Divisao
-    num = float(input("\nQuantos numeros deseja dividir ? "))
+    num = int(input("\nQuantos numeros deseja dividir ? "))
 
     if num < 2:
         print("E necessário pelo menos dois numeros.")
@@ -49,39 +49,38 @@ def div(): # Divisao
             divisao = float(input(f"{i+1} numero -> "))
             result /= divisao
 
-        print(result)
+        print("\nResultado da conta ", result)
 
 def exp(): # Potencia
     x = float(input("\nDigite a base --> "))
-    y = float(input("\nDigite o expoente --> "))
+    y = int(input("\nDigite o expoente --> "))
 
-    print(math.pow(x, y)) # X^y
+    print("\nResultado da conta ", math.pow(x, y)) # X^y
 
 def raiz(): # Raiz
-    raiz = float(input("\nDigite o numero --> "))
-    print(math.sqrt(raiz))
+    raiz = int(input("\nDigite o numero --> "))
+    print("\nResultado da conta ", math.sqrt(raiz))
 
 def fat(): # Fatorial
     fatorial = float(input("\nDigite o numero --> "))   
-    print(math.factorial(fatorial))
+    print("\nResultado da conta ", math.factorial(fatorial))
 
 def log(): # Log
     base = float(input("\nDigite a base do logaritmo --> "))
     num = float(input("\nDigite o numero --> "))
 
-    print(math.log(num, base))
+    print("\nResultado da conta ", math.log(num, base))
 
 
 print("======= CALCULADORA =======\n\n")
 
 print("Selecione a operacao desejada:\n")
-print("\n[1] Soma \n[2] Subtracao \n[3] Multiplicacao")
-print("\n[4] Divisao \n[5] Potenciacao \n[6] Fatorial")
-print("\n[7] Raiz Quadrada \n[8] Log")
+print("[1] Soma \n[2] Subtracao \n[3] Multiplicacao")
+print("[4] Divisao \n[5] Potenciacao \n[6] Fatorial")
+print("[7] Raiz Quadrada \n[8] Log")
 
 num = int(input("\n--> "))
 
-print("Resultado da conta ")
 match num:
     case 1:
         soma()
